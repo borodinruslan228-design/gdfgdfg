@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#fff7fa" />
+    <meta
+      name="description"
+      content="Небольшая открытка с котиками и тёплыми пожеланиями."
+    />
+    <title>Для тебя — маленькая открытка</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-glow page-glow--one" aria-hidden="true"></div>
+    <div class="page-glow page-glow--two" aria-hidden="true"></div>
+
+    <main class="app">
+      <header class="topbar">
+        <a class="brand" href="#screen-1" aria-label="На первый экран">
+          <span class="brand-mark" aria-hidden="true">♡</span>
+          <span>маленькая открытка</span>
+        </a>
+        <div class="progress" aria-label="Прогресс открытки">
+          <span class="progress-label" id="progress-label">1 / 5</span>
+          <span class="progress-track"
+            ><span class="progress-fill" id="progress-fill"></span
+          ></span>
+        </div>
+      </header>
+
+      <div class="screens" aria-live="polite">
+        <section
+          class="screen is-active"
+          id="screen-1"
+          aria-labelledby="welcome-title"
+        >
+          <div class="screen-layout welcome-layout">
+            <div class="screen-copy">
+              <p class="eyebrow">
+                <span class="eyebrow-dot"></span> маленький островок тепла
+              </p>
+              <h1 id="welcome-title">Привет,<br /><span>суслик.</span></h1>
+              <p class="lead">
+                Я приготовил для тебя кое-что уютное. Тут будут котики,
+                маленькие сюрпризы и напоминание о том, какая ты замечательная.
+              </p>
+              <button class="button button-primary" type="button" data-go="2">
+                Открыть открытку <span aria-hidden="true">→</span>
+              </button>
+              <p class="tiny-note">Займёт всего пару минут ♡</p>
+            </div>
+            <div class="welcome-art">
+              <span class="art-sparkle sparkle-one" aria-hidden="true">✦</span>
+              <span class="art-sparkle sparkle-two" aria-hidden="true">✧</span>
+              <div class="sticker-card sticker-card--welcome">
+                <img
+                  src="images/stickers/sticker-01.gif"
+                  alt="Котика нежно гладят"
+                  fetchpriority="high"
+                />
+              </div>
+              <div class="sticker-peek">
+                <img
+                  src="images/stickers/sticker-02.gif"
+                  alt="Два спящих котёнка"
+                  loading="lazy"
+                />
+              </div>
+              <div class="sticker-peek sticker-peek--small">
+                <img
+                  src="images/stickers/sticker-15.webp"
+                  alt="Серый с белым котик"
+                  loading="lazy"
+                />
+              </div>
+              <span class="sticker-caption">всё для тебя</span>
+            </div>
+          </div>
+          <span class="screen-decoration decoration-heart" aria-hidden="true"
+            >♡</span
+          >
+        </section>
+
+        <section
+          class="screen"
+          id="screen-2"
+          aria-labelledby="quiz-title"
+          hidden
+        >
+          <div class="section-heading">
+            <p class="eyebrow">
+              <span class="eyebrow-dot"></span> маленький вопрос
+            </p>
+            <h2 id="quiz-title">Какое настроение<br />тебе ближе сегодня?</h2>
+            <p class="lead">
+              Выбирай то, что откликается. Здесь нет неправильных ответов.
+            </p>
+          </div>
+          <div class="quiz-content">
+            <div
+              class="quiz-stickers"
+              aria-label="Котики для хорошего настроения"
+            >
+              <img
+                src="images/stickers/sticker-03.gif"
+                alt="Пушистый котёнок"
+                loading="lazy"
+              />
+              <img
+                src="images/stickers/sticker-04.gif"
+                alt="Рыжий котёнок смотрит вверх"
+                loading="lazy"
+              />
+              <img
+                src="images/stickers/sticker-05.gif"
+                alt="Маленький рыжий котёнок"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="quiz-options"
+              role="group"
+              aria-label="Выбери настроение"
+            >
+              <button
+                class="choice-button"
+                type="button"
+                data-answer="Уют и спокойствие"
+                aria-pressed="false"
+              >
+                <span class="choice-emoji" aria-hidden="true">☁️</span
+                ><span
+                  ><strong>Уют и спокойствие</strong
+                  ><small>Плед, чай и никуда не спешить</small></span
+                ><span class="choice-check" aria-hidden="true">✓</span>
+              </button>
+              <button
+                class="choice-button"
+                type="button"
+                data-answer="Немного радости"
+                aria-pressed="false"
+              >
+                <span class="choice-emoji" aria-hidden="true">🌷</span
+                ><span
+                  ><strong>Немного радости</strong
+                  ><small>Хочу улыбнуться хотя бы разок</small></span
+                ><span class="choice-check" aria-hidden="true">✓</span>
+              </button>
+              <button
+                class="choice-button"
+                type="button"
+                data-answer="Тишина и пауза"
+                aria-pressed="false"
+              >
+                <span class="choice-emoji" aria-hidden="true">🌙</span
+                ><span
+                  ><strong>Тишина и пауза</strong
+                  ><small>Мне бы просто выдохнуть</small></span
+                ><span class="choice-check" aria-hidden="true">✓</span>
+              </button>
+              <p class="answer-note" id="answer-note" aria-live="polite">
+                Любой твой ответ — хороший.
+              </p>
+              <div class="button-row">
+                <button class="button button-quiet" type="button" data-back>
+                  ← Назад
+                </button>
+                <button class="button button-primary" type="button" data-go="3">
+                  Дальше <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="screen"
+          id="screen-3"
+          aria-labelledby="gifts-title"
+          hidden
+        >
+          <div class="section-heading">
+            <p class="eyebrow">
+              <span class="eyebrow-dot"></span> для тебя приготовлено
+            </p>
+            <h2 id="gifts-title">Три маленьких<br />сюрприза</h2>
+            <p class="lead">
+              Открывай в любом порядке. Можно возвращаться и смотреть снова.
+            </p>
+          </div>
+          <div class="gift-grid">
+            <button
+              class="gift-card"
+              type="button"
+              data-gift="0"
+              aria-expanded="false"
+            >
+              <span class="gift-image"
+                ><img
+                  src="images/stickers/sticker-06.gif"
+                  alt="Котик на зелёном пледе"
+                  loading="lazy"
+              /></span>
+              <span class="gift-box" aria-hidden="true">🎁</span>
+              <span class="gift-title">Подарок нежности</span>
+              <span class="gift-message"
+                >Ты заслуживаешь доброты — в том числе от самой себя.</span
+              >
+              <span class="gift-hint">Нажми, чтобы открыть</span>
+            </button>
+            <button
+              class="gift-card"
+              type="button"
+              data-gift="1"
+              aria-expanded="false"
+            >
+              <span class="gift-image"
+                ><img
+                  src="images/stickers/sticker-07.gif"
+                  alt="Светлый котёнок на кровати"
+                  loading="lazy"
+              /></span>
+              <span class="gift-box" aria-hidden="true">🎀</span>
+              <span class="gift-title">Подарок заботы</span>
+              <span class="gift-message"
+                >Пожалуйста, сегодня найди минутку только для себя.</span
+              >
+              <span class="gift-hint">Нажми, чтобы открыть</span>
+            </button>
+            <button
+              class="gift-card"
+              type="button"
+              data-gift="2"
+              aria-expanded="false"
+            >
+              <span class="gift-image"
+                ><img
+                  src="images/stickers/sticker-08.gif"
+                  alt="Белый котик отдыхает"
+                  loading="lazy"
+              /></span>
+              <span class="gift-box" aria-hidden="true">💌</span>
+              <span class="gift-title">Подарок улыбки</span>
+              <span class="gift-message"
+                >Пусть сегодня случится что-то маленькое, но приятное.</span
+              >
+              <span class="gift-hint">Нажми, чтобы открыть</span>
+            </button>
+          </div>
+          <div class="gift-footer">
+            <div class="gift-extra" aria-hidden="true">
+              <img src="images/stickers/sticker-09.gif" alt="" loading="lazy" />
+              <span>котик одобряет</span>
+            </div>
+            <div class="button-row">
+              <button class="button button-quiet" type="button" data-back>
+                ← Назад
+              </button>
+              <button class="button button-primary" type="button" data-go="4">
+                К следующему экрану <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="screen"
+          id="screen-4"
+          aria-labelledby="play-title"
+          hidden
+        >
+          <div class="screen-layout play-layout">
+            <div class="play-copy">
+              <p class="eyebrow">
+                <span class="eyebrow-dot"></span> нажми на настроение
+              </p>
+              <h2 id="play-title">Небольшая<br /><span>передышка</span></h2>
+              <p class="lead">
+                Выбирай котика, сердечко или звёздочку — каждый приготовил тебе
+                свою фразу.
+              </p>
+              <div class="message-bubble" id="play-message" aria-live="polite">
+                Кто сегодня первым передаст тебе привет?
+              </div>
+              <div class="play-actions" aria-label="Выбери стикер">
+                <button
+                  class="play-action"
+                  type="button"
+                  data-message="Ты сегодня уже улыбалась?"
+                  aria-label="Котик спрашивает: ты сегодня уже улыбалась?"
+                >
+                  <span class="action-sticker"
+                    ><img
+                      src="images/stickers/sticker-10.gif"
+                      alt=""
+                      loading="lazy"
+                  /></span>
+                  <span>котик</span>
+                </button>
+                <button
+                  class="play-action"
+                  type="button"
+                  data-message="Это напоминание, что ты прекрасна."
+                  aria-label="Сердечко напоминает, что ты прекрасна"
+                >
+                  <span
+                    class="action-sticker action-sticker--heart"
+                    aria-hidden="true"
+                    >♡</span
+                  >
+                  <span>сердечко</span>
+                </button>
+                <button
+                  class="play-action"
+                  type="button"
+                  data-message="Обнимашки доставлены!"
+                  aria-label="Звёздочка доставляет обнимашки"
+                >
+                  <span
+                    class="action-sticker action-sticker--star"
+                    aria-hidden="true"
+                    >✦</span
+                  >
+                  <span>звёздочка</span>
+                </button>
+              </div>
+              <div class="button-row">
+                <button class="button button-quiet" type="button" data-back>
+                  ← Назад
+                </button>
+                <button class="button button-primary" type="button" data-go="5">
+                  К последнему экрану <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </div>
+            <div class="play-art" aria-hidden="true">
+              <span class="play-sparkle play-sparkle--one">✧</span>
+              <span class="play-sparkle play-sparkle--two">✦</span>
+              <img
+                class="play-cat play-cat--main"
+                src="images/stickers/sticker-11.gif"
+                alt=""
+                loading="lazy"
+              />
+              <img
+                class="play-cat play-cat--side play-cat--one"
+                src="images/stickers/sticker-12.gif"
+                alt=""
+                loading="lazy"
+              />
+              <img
+                class="play-cat play-cat--side play-cat--two"
+                src="images/stickers/sticker-13.gif"
+                alt=""
+                loading="lazy"
+              />
+              <img
+                class="play-cat play-cat--side play-cat--three"
+                src="images/stickers/sticker-14.gif"
+                alt=""
+                loading="lazy"
+              />
+              <span class="play-art-caption">ты справляешься ♡</span>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="screen final-screen"
+          id="screen-5"
+          aria-labelledby="final-title"
+          hidden
+        >
+          <div class="final-card">
+            <p class="eyebrow">
+              <span class="eyebrow-dot"></span> оставлю это здесь для тебя
+            </p>
+            <div class="final-sticker">
+              <span class="final-sparkle final-sparkle--one" aria-hidden="true"
+                >✧</span
+              >
+              <img
+                src="images/stickers/sticker-14.gif"
+                alt="Милый белый и серый котёнок"
+                loading="lazy"
+              />
+              <span class="final-sparkle final-sparkle--two" aria-hidden="true"
+                >✦</span
+              >
+            </div>
+            <h2 id="final-title">И напоследок…</h2>
+            <div class="final-message">
+              <p>
+                Ты очень красивая. И не только тогда, когда нарядилась или
+                накрасилась.
+              </p>
+              <p>
+                Даже с растрёпанными волосами, сонная, без макияжа — ты всё
+                равно остаёшься красивой.
+              </p>
+              <p>
+                Не сомневайся в себе, не ищи недостатки там, где их не нужно
+                искать.
+              </p>
+              <p>
+                Улыбайся почаще, суслик. Тебе очень идёт.
+                <span class="inline-cat" role="img" aria-label="котик">🐱</span>
+              </p>
+            </div>
+            <p class="final-signoff">
+              Если вдруг забудешь — возвращайся сюда
+              <span aria-hidden="true">♡</span>
+            </p>
+            <button
+              class="button button-quiet final-back"
+              type="button"
+              data-back
+            >
+              ← Назад к стикерам
+            </button>
+          </div>
+        </section>
+      </div>
+      <footer class="footer-note">
+        сделано с теплом <span aria-hidden="true">♡</span>
+      </footer>
+    </main>
+  </body>
+</html>
